@@ -12,7 +12,9 @@ function App() {
   useEffect(() => {
     const fetchPasswords = async () => {
       try {
-        const response = await fetch("http://localhost:3001/passwords");
+        const response = await fetch(
+          `${import.meta.env.VITE_API_URL}/passwords`,
+        );
         const result = await response.json();
         setPasswords(result);
       } catch (err) {
