@@ -28,10 +28,23 @@ function App() {
     setPasswords((prevPasswords) => [...prevPasswords, newPassword]);
   };
 
-  const handlePasswordDeleted = (id) => {
-    setPasswords((prevPasswords) => {
-      return prevPasswords.filter((password) => password.id !== id);
-    });
+  const handlePasswordDeleted = async (id) => {
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/passwords/${id}`,
+        {
+          method: "DELETE",
+        },
+      );
+      if (!response.ok) {
+        throw new Error("Failed to delete password");
+      }
+      setPasswords((prevPasswords) =>
+        prevPasswords.filter((password) => password.id !== id),
+      );
+    } catch (err) {
+      console.error(err.message);
+    }
   };
 
   return (
