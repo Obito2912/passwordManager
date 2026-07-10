@@ -1,7 +1,7 @@
 import { useState } from "react";
 import CreatePasswordForm from "./CreatePasswordForm";
 
-export default function PasswordManager() {
+function PasswordManager({ onPasswordCreated }) {
   const [showForm, setShowForm] = useState(false);
 
   return (
@@ -11,9 +11,14 @@ export default function PasswordManager() {
           Create your first password
         </button>
 
-        {showForm && <CreatePasswordForm onClose={() => setShowForm(false)} />}
+        {showForm && (
+          <CreatePasswordForm
+            onClose={() => setShowForm(false)}
+            onPasswordCreated={onPasswordCreated}
+          />
+        )}
       </div>
     </>
   );
 }
-export { PasswordManager };
+export default PasswordManager;
