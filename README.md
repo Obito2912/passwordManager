@@ -1,16 +1,20 @@
-# React + Vite
+# Overview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is an app that lets you save your password along with the name you want to give and the username/website
 
-Currently, two official plugins are available:
+The purpose of this program is to make password management easier for people. In the era where everybody uses the internet and most of their information is there, we all need passwords and usernames to be safe but a lot of those times we create difficult passwords and we don't remember. This is just a demo. There is no user authentication and I added routes for patch/put and I may implement it in the future to be able to edit each entry.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+[Software Demo Video](https://youtu.be/8aDqOsz_JZA)
 
-## React Compiler
+# Development Environment
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+I used JavaScript, React, CSS, JSX, PostgreSQL, Render, NodeJS, Express.
 
-## Expanding the ESLint configuration
+# Useful Websites
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Claude for questions and debugging, and PostgreSQL's website to download and install the program locally. I also went to dBeaver's website to download and install it.
+
+# Run the project
+
+You can either run it locally with npm install and then npm run dev or visit the following link:
+[Software Demo Video](https://passwordmanager-1-j7kx.onrender.com/)

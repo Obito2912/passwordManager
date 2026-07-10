@@ -1,9 +1,11 @@
+// Component to display the list of passwords and handle deletion
 function PasswordList({ data, onPasswordDeleted }) {
   return (
     <>
       {data.length === 0 ? (
         <div>You don't have any passwords yet.</div>
       ) : (
+        // Map through the data array and display each password entry
         data.map((item, index) => (
           <div key={item.id} className="password-entry">
             {/* delete button could go here */}

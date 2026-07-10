@@ -7,10 +7,11 @@ function PasswordManager({ onPasswordCreated }) {
   return (
     <>
       <div className="create-password-btn-container">
+        {/* Button to show the create password form */}
         <button onClick={() => setShowForm(true)} className="create-btn">
-          Create your first password
+          Create your password
         </button>
-
+        {/* Show the create password form when the button is clicked */}
         {showForm && (
           <CreatePasswordForm
             onClose={() => setShowForm(false)}

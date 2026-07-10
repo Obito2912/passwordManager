@@ -7,8 +7,10 @@ import PasswordManager from "./PasswordManager";
 import { useState, useEffect } from "react";
 
 function App() {
+  // State to manage the list of passwords
   const [passwords, setPasswords] = useState([]);
 
+  // Fetch the list of passwords from the API when the component mounts
   useEffect(() => {
     const fetchPasswords = async () => {
       try {
@@ -24,10 +26,12 @@ function App() {
     fetchPasswords();
   }, []);
 
+  // Function to handle the creation of a new password entry
   const handlePasswordCreated = (newPassword) => {
     setPasswords((prevPasswords) => [...prevPasswords, newPassword]);
   };
 
+  // Function to handle the deletion of a password entry
   const handlePasswordDeleted = async (id) => {
     try {
       const response = await fetch(

@@ -1,22 +1,27 @@
 import { useState } from "react";
 
 function CreatePasswordForm({ onClose, onPasswordCreated }) {
+  // State to manage the form data for creating a new password entry
   const [formData, setFormData] = useState({
     website: "",
     email: "",
     password: "",
   });
 
+  // Function to handle form submission and create a new password entry
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/passwords`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/passwords`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
         },
-        body: JSON.stringify(formData),
-      });
+      );
       if (!response.ok) {
         throw new Error("Failed to create password");
       }
@@ -77,6 +82,7 @@ function CreatePasswordForm({ onClose, onPasswordCreated }) {
           <button className="form-button" type="submit">
             Create Password
           </button>
+          {/* Button to cancel and close the form */}
           <button
             className="form-button"
             onClick={(e) => {
